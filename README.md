@@ -11,3 +11,5 @@ https://www.whizlabs.com/blog/terraform-certification-exam-questions/
 https://www.itexams.com/exam/Terraform-Associate
 
 https://codingnconcepts.com/post/terraform-associate-exam-questions/
+
+https://learn.kodekloud.com/user/courses/terraform-associate-certification-hashicorp-certified
