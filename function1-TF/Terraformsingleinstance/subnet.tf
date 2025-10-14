@@ -19,11 +19,11 @@ resource "aws_subnet" "public-subnet" {
 }
 #3 private subnet
 resource "aws_subnet" "private-subnet" {
-    #count = 3
-    count = "${length(var.private_cidr_block)}"         #ab manually numbers add nahi kerny hony due to length function jo b list mein ho ga wo ider aa jaye ga
+    #count = 3 
+    count = "${length(var.private_cidr_block)}"         #ab manually numbers add nahi kerny hony due to length function jo b list mein ho ga wo ider aa jaye ga ,##. Decides how many subnets to create
     vpc_id = "${aws_vpc.default.id}"
-    cidr_block = "${element(var.private_cidr_block, count.index)}"       #element(list, index)
-    availability_zone = "${element(var.azs, count.index)}"
+    cidr_block = "${element(var.private_cidr_block, count.index)}"       #element(list, index) #Picks &creates CIDR for each subnet
+    availability_zone = "${element(var.azs, count.index)}"				#Picks AZ for each subnet based on the above count we dont need new count here
 
     tags = {
         Name = "${var.vpc_name}-private-subnet-${count.index+1}"
@@ -34,3 +34,4 @@ resource "aws_subnet" "private-subnet" {
     }
 
 }
+
