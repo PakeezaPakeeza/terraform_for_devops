@@ -2,7 +2,8 @@
 resource "aws_subnet" "public-subnet" {
     #count = 3   #ye kam length function sy b ho skta tha: count = length(var.public_cidr_block)   ku k variable mein list hai
                              #                            cidr_block  = var.public_cidr_block[count.index]
-                             #lekin hum simple count use keren gy
+                             #lekin hum simple count use keren gy 
+							#count means how many resources to make #lenth means how many items are in a list,map or string
     count = "${length(var.public_cidr_block)}"
     vpc_id = "${aws_vpc.default.id}"
     cidr_block = "${element(var.public_cidr_block, count.index)}"       #element(list, index)
@@ -31,4 +32,5 @@ resource "aws_subnet" "private-subnet" {
         TeamDL = local.TeamDL
         environment = "${var.environment}"
     }
+
 }
