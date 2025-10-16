@@ -20,6 +20,7 @@ resource "aws_instance" "public-server" {
         TeamDL = local.TeamDL
         environment = "${var.environment}"
     }
+#step1 run the below code as it is it will run user-data.sh on ec2 with stopping it
     #again ye below code connection * proviosioners ko  ec2 k ander rekheun gy to TF modifications kerny py ec2 ko pehly terminate kery ga isliye hum null.tf bnayen gy
     # connection {
     #         type        = "ssh"
@@ -34,4 +35,5 @@ resource "aws_instance" "public-server" {
     #     destination = "/tmp/user-data.sh"
     # }
         
+
  }
