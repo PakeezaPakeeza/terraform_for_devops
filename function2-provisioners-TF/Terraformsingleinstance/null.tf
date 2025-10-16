@@ -36,8 +36,8 @@ resource "null_resource" "cluster"{
 
         provisioner "remote-exec" {
         inline = [
-        "sudo chmod 700 /tmp/userdata.sh",
-        "sudo /tmp/userdata.sh",
+        "sudo chmod 700 /tmp/user-data.sh",
+        "sudo /tmp/user-data.sh",
         "sudo apt update",
         "sudo apt install jq unzip -y",
         ]
@@ -50,5 +50,6 @@ resource "null_resource" "cluster"{
         }
         }
 }
+
 
 
